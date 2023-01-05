@@ -10,4 +10,15 @@ public class ContactTriggerHandler {
                      }
                  }
     }
+    public static void contactUpdateValidation2(List<contact> conTriggerNew, List<contact> conTriggerOld,
+             Map<id, contact> conTriggerNewMap, Map<id, contact> conTriggerOldMap) {
+ 
+                 for (contact eachContact : conTriggerNew) {
+                     contact oldContact = conTriggerOldMap.get(eachContact.id);
+                     if (eachContact.LeadSource != oldContact.LeadSource) {
+                         string customError = system.label.ContactValidation2;
+                         eachContact.LeadSource.addError(customError);
+                     }
+                 }
+     }
  }

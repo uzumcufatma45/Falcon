@@ -1,5 +1,5 @@
 public  class SoqlDemo2 {
-    public static void soqlhildToParent_1(){
+    public static void soqlchildToParent_1(){
         List<contact> listContacts=[select id, name, account.name, account.industry from contact where account.industry='Energy'];
         system.debug(listContacts);
         for(Contact eachContact:listContacts){
